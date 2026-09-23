@@ -1,171 +1,859 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tropic Sites | Websites for Australian Businesses</title>
-    <meta name="description" content="Tropic Sites builds modern, professional websites for Australian small businesses.">
-    
+
+    <title>Tropic Sites | Premium Websites for Australian Businesses</title>
+
+    <meta name="description" content="Tropic Sites creates modern, high-performance websites for Australian small businesses. Website design, SEO, hosting and ongoing support.">
+
+    <meta name="theme-color" content="#0b2f29">
+
     <style>
+        :root {
+            --green-dark: #0b2f29;
+            --green: #0f6b5b;
+            --green-light: #1d8b76;
+            --aqua: #54c7b1;
+            --cream: #f6f3eb;
+            --white: #ffffff;
+            --black: #10201d;
+            --grey: #687773;
+            --border: rgba(11, 47, 41, 0.12);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #17211f;
-            background: #f7f9f8;
-            line-height: 1.6;
+        html {
+            scroll-behavior: smooth;
         }
 
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--cream);
+            color: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1180px, 88%);
+            margin: 0 auto;
+        }
+
+        /* HEADER */
+
         header {
-            background: #ffffff;
-            padding: 22px 6%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(246, 243, 235, 0.92);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav {
+            min-height: 78px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #e7ecea;
+            justify-content: space-between;
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: 800;
-            color: #087f6c;
-            letter-spacing: -0.5px;
+            font-size: 21px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            color: var(--green-dark);
+        }
+
+        .logo span {
+            color: var(--green-light);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
         }
 
         nav a {
-            color: #17211f;
-            text-decoration: none;
-            margin-left: 28px;
-            font-weight: 600;
+            font-size: 14px;
+            font-weight: 700;
+            color: #42504d;
+            transition: color 0.2s ease;
         }
 
         nav a:hover {
-            color: #087f6c;
+            color: var(--green);
         }
 
+        .nav-button {
+            background: var(--green-dark);
+            color: white !important;
+            padding: 12px 19px;
+            border-radius: 100px;
+        }
+
+        .nav-button:hover {
+            background: var(--green);
+        }
+
+        /* HERO */
+
         .hero {
-            padding: 110px 6%;
-            text-align: center;
-            background: linear-gradient(135deg, #e9f8f4, #ffffff);
+            min-height: 760px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 85% 20%, rgba(84, 199, 177, 0.25), transparent 28%),
+                linear-gradient(135deg, #f6f3eb 0%, #eaf4ef 100%);
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 650px;
+            height: 650px;
+            border-radius: 50%;
+            right: -280px;
+            bottom: -300px;
+            background: var(--aqua);
+            opacity: 0.12;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 820px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--green);
+            font-size: 12px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 30px;
+            height: 2px;
+            background: var(--aqua);
         }
 
         .hero h1 {
-            font-size: clamp(45px, 7vw, 78px);
+            font-size: clamp(52px, 8vw, 96px);
+            line-height: 0.96;
+            letter-spacing: -5px;
+            max-width: 950px;
+            margin-bottom: 32px;
+        }
+
+        .hero h1 span {
+            color: var(--green);
+        }
+
+        .hero-text {
+            max-width: 640px;
+            font-size: 20px;
+            color: var(--grey);
+            margin-bottom: 38px;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 25px;
+            border-radius: 100px;
+            background: var(--green-dark);
+            color: white;
+            font-size: 14px;
+            font-weight: 800;
+            transition: all 0.25s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            background: var(--green);
+            box-shadow: 0 12px 30px rgba(11, 47, 41, 0.18);
+        }
+
+        .button.secondary {
+            background: transparent;
+            color: var(--green-dark);
+            border: 1px solid var(--border);
+        }
+
+        .button.secondary:hover {
+            background: white;
+        }
+
+        /* TRUST BAR */
+
+        .trust {
+            background: var(--green-dark);
+            color: white;
+            padding: 22px 0;
+        }
+
+        .trust-inner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 45px;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #d6e2de;
+        }
+
+        .trust-dot {
+            width: 5px;
+            height: 5px;
+            background: var(--aqua);
+            border-radius: 50%;
+        }
+
+        /* GENERAL */
+
+        section {
+            padding: 115px 0;
+        }
+
+        .section-header {
+            max-width: 720px;
+            margin-bottom: 60px;
+        }
+
+        .section-header.center {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-label {
+            color: var(--green);
+            font-size: 11px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(38px, 5vw, 62px);
+            line-height: 1.02;
+            letter-spacing: -3px;
+            margin-bottom: 20px;
+        }
+
+        .section-header p {
+            color: var(--grey);
+            font-size: 18px;
+        }
+
+        /* SERVICES */
+
+        .services {
+            background: var(--white);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .service-card {
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 38px;
+            min-height: 300px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            background: white;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 25px 60px rgba(11, 47, 41, 0.09);
+        }
+
+        .service-number {
+            color: var(--aqua);
+            font-size: 13px;
+            font-weight: 900;
+            margin-bottom: 65px;
+        }
+
+        .service-card h3 {
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--grey);
+            font-size: 15px;
+        }
+
+        /* PROCESS */
+
+        .process {
+            background: var(--cream);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .process-card {
+            padding: 30px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .process-number {
+            font-size: 12px;
+            color: var(--green);
+            font-weight: 900;
+            margin-bottom: 35px;
+        }
+
+        .process-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .process-card p {
+            color: var(--grey);
+            font-size: 14px;
+        }
+
+        /* ABOUT */
+
+        .feature {
+            background: var(--green-dark);
+            color: white;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 90px;
+            align-items: center;
+        }
+
+        .feature .section-label {
+            color: var(--aqua);
+        }
+
+        .feature h2 {
+            font-size: clamp(40px, 5vw, 65px);
             line-height: 1;
             letter-spacing: -3px;
             margin-bottom: 25px;
         }
 
-        .hero h1 span {
-            color: #087f6c;
+        .feature p {
+            color: #bdcdc8;
+            font-size: 17px;
+            margin-bottom: 25px;
         }
 
-        .hero p {
-            max-width: 650px;
-            margin: 0 auto 35px;
-            font-size: 20px;
-            color: #53605c;
+        .feature-list {
+            list-style: none;
+            margin-top: 30px;
         }
 
-        .button {
-            display: inline-block;
-            background: #087f6c;
-            color: white;
-            padding: 15px 28px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
+        .feature-list li {
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+            color: #dce7e4;
+            font-size: 15px;
         }
 
-        .button:hover {
-            background: #056655;
+        .feature-list li::before {
+            content: "✓";
+            color: var(--aqua);
+            font-weight: bold;
+            margin-right: 12px;
         }
 
-        section {
-            padding: 85px 6%;
+        .visual {
+            min-height: 480px;
+            border-radius: 28px;
+            position: relative;
+            overflow: hidden;
+            background:
+                linear-gradient(145deg, rgba(15,107,91,0.5), rgba(4,25,22,0.8)),
+                radial-gradient(circle at 70% 30%, #49bfa9, transparent 25%),
+                linear-gradient(135deg, #16483e, #071c19);
         }
 
-        .section-title {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 50px;
+        .visual::before {
+            content: "";
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 50%;
+            right: -80px;
+            top: -80px;
         }
 
-        .section-title h2 {
-            font-size: 42px;
-            margin-bottom: 15px;
-            letter-spacing: -1px;
+        .visual::after {
+            content: "TROPIC";
+            position: absolute;
+            bottom: 35px;
+            left: 35px;
+            font-size: 70px;
+            font-weight: 900;
+            letter-spacing: -5px;
+            color: rgba(255,255,255,0.08);
         }
 
-        .section-title p {
-            color: #65716d;
-            font-size: 18px;
+        /* WORK */
+
+        .work {
+            background: var(--white);
         }
 
-        .services {
+        .work-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 25px;
-            max-width: 1100px;
-            margin: auto;
         }
 
-        .card {
+        .work-card {
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: var(--cream);
+        }
+
+        .work-preview {
+            height: 300px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .preview-one {
+            background: linear-gradient(135deg, #d9efe8, #8bc8b9);
+        }
+
+        .preview-two {
+            background: linear-gradient(135deg, #e8dfc9, #c8a96b);
+        }
+
+        .preview-three {
+            background: linear-gradient(135deg, #d9e9f1, #73aabd);
+        }
+
+        .preview-four {
+            background: linear-gradient(135deg, #e7ded9, #b88e78);
+        }
+
+        .browser {
+            position: absolute;
+            left: 30px;
+            right: 30px;
+            top: 35px;
+            bottom: -50px;
             background: white;
-            padding: 32px;
-            border-radius: 14px;
-            border: 1px solid #e5ebe8;
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            padding: 15px;
         }
 
-        .card h3 {
-            margin-bottom: 12px;
-            font-size: 22px;
+        .browser-bar {
+            width: 100%;
+            height: 8px;
+            background: #edf0ef;
+            border-radius: 20px;
+            margin-bottom: 20px;
         }
 
-        .card p {
-            color: #65716d;
+        .browser-content {
+            padding: 25px;
         }
 
-        .about {
-            background: #17211f;
-            color: white;
-            text-align: center;
+        .browser-line {
+            height: 9px;
+            background: #dce5e2;
+            border-radius: 10px;
+            width: 65%;
+            margin-bottom: 10px;
         }
 
-        .about p {
-            max-width: 700px;
-            margin: auto;
-            color: #cbd5d2;
-            font-size: 18px;
+        .browser-line.short {
+            width: 40%;
         }
 
-        .contact {
-            text-align: center;
+        .work-info {
+            padding: 28px;
         }
 
-        footer {
-            background: #101715;
-            color: #9da9a5;
-            text-align: center;
-            padding: 30px 6%;
+        .work-info span {
+            color: var(--green);
+            font-size: 10px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .work-info h3 {
+            font-size: 24px;
+            margin: 7px 0;
+        }
+
+        .work-info p {
+            color: var(--grey);
             font-size: 14px;
         }
 
-        @media (max-width: 750px) {
+        /* PRICING */
+
+        .pricing {
+            background: var(--cream);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .price-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 35px;
+        }
+
+        .price-card.featured {
+            background: var(--green-dark);
+            color: white;
+            transform: translateY(-10px);
+        }
+
+        .price-card h3 {
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .price-card .description {
+            color: var(--grey);
+            font-size: 14px;
+            min-height: 65px;
+            margin-bottom: 25px;
+        }
+
+        .featured .description {
+            color: #b7cbc6;
+        }
+
+        .price {
+            font-size: 38px;
+            font-weight: 900;
+            letter-spacing: -2px;
+            margin-bottom: 25px;
+        }
+
+        .price-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .price-list li {
+            padding: 9px 0;
+            font-size: 13px;
+            color: #566460;
+        }
+
+        .featured .price-list li {
+            color: #d2dfdc;
+        }
+
+        .price-list li::before {
+            content: "✓";
+            color: var(--green-light);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .featured .price-list li::before {
+            color: var(--aqua);
+        }
+
+        .price-card .button {
+            width: 100%;
+        }
+
+        /* FAQ */
+
+        .faq {
+            background: white;
+        }
+
+        .faq-list {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        details {
+            border-top: 1px solid var(--border);
+            padding: 24px 0;
+        }
+
+        details:last-child {
+            border-bottom: 1px solid var(--border);
+        }
+
+        summary {
+            cursor: pointer;
+            list-style: none;
+            font-size: 18px;
+            font-weight: 800;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: "+";
+            font-size: 25px;
+            color: var(--green);
+            font-weight: 400;
+        }
+
+        details[open] summary::after {
+            content: "−";
+        }
+
+        details p {
+            padding-top: 15px;
+            max-width: 700px;
+            color: var(--grey);
+            font-size: 15px;
+        }
+
+        /* CTA */
+
+        .cta {
+            background:
+                radial-gradient(circle at 85% 20%, rgba(84, 199, 177, 0.3), transparent 25%),
+                var(--green);
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: clamp(45px, 6vw, 76px);
+            line-height: 0.98;
+            letter-spacing: -4px;
+            max-width: 850px;
+            margin: 0 auto 25px;
+        }
+
+        .cta p {
+            color: #d0e4df;
+            font-size: 18px;
+            margin-bottom: 35px;
+        }
+
+        .cta .button {
+            background: white;
+            color: var(--green-dark);
+        }
+
+        .cta .button:hover {
+            background: var(--cream);
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #071c19;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+            padding-bottom: 55px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .footer-text {
+            max-width: 350px;
+            color: #9fb0ac;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 50px;
+        }
+
+        .footer-links a {
+            color: #bdccc9;
+            font-size: 13px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 25px;
+            color: #71837f;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 900px) {
+
             nav {
                 display: none;
             }
 
-            .services {
+            .hero {
+                min-height: 680px;
+            }
+
+            .service-grid,
+            .pricing-grid {
                 grid-template-columns: 1fr;
             }
 
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .price-card.featured {
+                transform: none;
+            }
+
+            .footer-top {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 80px 0;
+            }
+
+            .container {
+                width: 90%;
+            }
+
             .hero {
-                padding: 80px 6%;
+                min-height: 650px;
+            }
+
+            .hero h1 {
+                font-size: 53px;
+                letter-spacing: -3px;
+            }
+
+            .hero-text {
+                font-size: 17px;
+            }
+
+            .trust-inner {
+                gap: 18px;
+            }
+
+            .trust-dot {
+                display: none;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .visual {
+                min-height: 330px;
+            }
+
+            .work-preview {
+                height: 240px;
+            }
+
+            .browser {
+                left: 18px;
+                right: 18px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
             }
         }
     </style>
@@ -174,97 +862,768 @@
 <body>
 
 <header>
-    <div class="logo">TROPIC SITES</div>
+    <div class="container nav">
 
-    <nav>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
+        <a href="#" class="logo">
+            TROPIC <span>SITES</span>
+        </a>
+
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#work">Our Work</a>
+            <a href="#about">About</a>
+            <a href="#faq">FAQs</a>
+            <a href="#contact" class="nav-button">Let's Talk</a>
+        </nav>
+
+    </div>
 </header>
 
+
 <section class="hero">
-    <h1>Websites that<br><span>make an impact.</span></h1>
 
-    <p>
-        Modern, professional websites for Australian small businesses.
-        Simple, effective and built to help your business grow.
-    </p>
+    <div class="container">
 
-    <a href="#contact" class="button">Let's Talk</a>
-</section>
+        <div class="hero-content">
 
-<section id="services">
+            <div class="eyebrow">
+                Websites for Australian business
+            </div>
 
-    <div class="section-title">
-        <h2>What we do</h2>
-        <p>
-            Everything you need to get your business online and looking professional.
-        </p>
-    </div>
+            <h1>
+                Your business deserves
+                <span>a website that works.</span>
+            </h1>
 
-    <div class="services">
-
-        <div class="card">
-            <h3>Website Design</h3>
-            <p>
-                Modern websites designed around your business, your customers
-                and what you want to achieve.
+            <p class="hero-text">
+                Modern, high-performance websites designed to make your business
+                look great, build trust and turn visitors into customers.
             </p>
-        </div>
 
-        <div class="card">
-            <h3>SEO</h3>
-            <p>
-                Search-engine-friendly websites designed to help potential
-                customers find your business online.
-            </p>
-        </div>
+            <div class="buttons">
 
-        <div class="card">
-            <h3>Website Hosting</h3>
-            <p>
-                Keep your website online with reliable hosting without
-                needing to worry about the technical stuff.
-            </p>
+                <a href="#contact" class="button">
+                    Start a Project →
+                </a>
+
+                <a href="#work" class="button secondary">
+                    See Our Work
+                </a>
+
+            </div>
+
         </div>
 
     </div>
+
 </section>
 
-<section id="about" class="about">
 
-    <div class="section-title">
-        <h2>Built for small business.</h2>
+<div class="trust">
 
-        <p>
-            We believe getting a professional website shouldn't be complicated.
-            Tropic Sites helps Australian businesses get online with modern,
-            affordable websites without the unnecessary complexity.
-        </p>
+    <div class="container trust-inner">
+
+        <div class="trust-item">Website Design</div>
+
+        <div class="trust-dot"></div>
+
+        <div class="trust-item">SEO</div>
+
+        <div class="trust-dot"></div>
+
+        <div class="trust-item">Hosting</div>
+
+        <div class="trust-dot"></div>
+
+        <div class="trust-item">Ongoing Support</div>
+
+    </div>
+
+</div>
+
+
+<section id="services" class="services">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                What we do
+            </div>
+
+            <h2>
+                Everything your business needs online.
+            </h2>
+
+            <p>
+                From your first website to ongoing improvements,
+                we make your online presence look professional and work properly.
+            </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+            <div class="service-card">
+
+                <div class="service-number">01 / DESIGN</div>
+
+                <h3>Website Design</h3>
+
+                <p>
+                    Beautiful, responsive websites designed around your business,
+                    your customers and your goals.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-number">02 / VISIBILITY</div>
+
+                <h3>SEO</h3>
+
+                <p>
+                    Search-friendly websites built with the fundamentals
+                    Google and your customers need to find you.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-number">03 / SUPPORT</div>
+
+                <h3>Hosting & Support</h3>
+
+                <p>
+                    Keep your website online, secure and up to date
+                    without having to worry about the technical side.
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
 
 </section>
 
-<section id="contact" class="contact">
 
-    <div class="section-title">
-        <h2>Ready to get online?</h2>
+<section class="process">
 
-        <p>
-            Let's build something great for your business.
-        </p>
+    <div class="container">
+
+        <div class="section-header center">
+
+            <div class="section-label">
+                How it works
+            </div>
+
+            <h2>
+                Simple from start to finish.
+            </h2>
+
+            <p>
+                You don't need to understand websites. That's our job.
+            </p>
+
+        </div>
+
+
+        <div class="process-grid">
+
+            <div class="process-card">
+
+                <div class="process-number">01</div>
+
+                <h3>Tell us about your business.</h3>
+
+                <p>
+                    We learn about what you do, who your customers are
+                    and what you need from your website.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-number">02</div>
+
+                <h3>We build it.</h3>
+
+                <p>
+                    We turn your ideas, content and goals into a professional
+                    website designed specifically for your business.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-number">03</div>
+
+                <h3>You review it.</h3>
+
+                <p>
+                    You'll get to see everything before anything goes live
+                    and we'll make the changes you need.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="process-number">04</div>
+
+                <h3>We launch.</h3>
+
+                <p>
+                    Once you're happy, your website goes live
+                    and your customers can find you online.
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <a href="mailto:info.tropicsites@gmail.com" class="button">
-        Email Us
-    </a>
+</section>
+
+
+<section id="about" class="feature">
+
+    <div class="container feature-grid">
+
+        <div>
+
+            <div class="section-label">
+                Why Tropic Sites
+            </div>
+
+            <h2>
+                Great websites shouldn't be complicated.
+            </h2>
+
+            <p>
+                Too many small businesses are stuck with outdated websites,
+                confusing technology and services they don't understand.
+            </p>
+
+            <p>
+                Tropic Sites takes care of the technical side so you can
+                concentrate on running your business.
+            </p>
+
+
+            <ul class="feature-list">
+
+                <li>Designed around your business</li>
+
+                <li>Built for phones, tablets and computers</li>
+
+                <li>Fast and search-engine friendly</li>
+
+                <li>Clear communication in plain English</li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="visual"></div>
+
+    </div>
 
 </section>
+
+
+<section id="work" class="work">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                Our work
+            </div>
+
+            <h2>
+                Websites built to look the part.
+            </h2>
+
+            <p>
+                Every business is different. Your website should be too.
+            </p>
+
+        </div>
+
+
+        <div class="work-grid">
+
+
+            <div class="work-card">
+
+                <div class="work-preview preview-one">
+
+                    <div class="browser">
+
+                        <div class="browser-bar"></div>
+
+                        <div class="browser-content">
+
+                            <div class="browser-line"></div>
+                            <div class="browser-line short"></div>
+
+                            <br>
+
+                            <div class="browser-line"></div>
+                            <div class="browser-line"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="work-info">
+
+                    <span>Demo Project · Trades</span>
+
+                    <h3>Cairns Coast Mechanical</h3>
+
+                    <p>
+                        A modern website designed to turn searches into bookings.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="work-card">
+
+                <div class="work-preview preview-two">
+
+                    <div class="browser">
+
+                        <div class="browser-bar"></div>
+
+                        <div class="browser-content">
+
+                            <div class="browser-line"></div>
+                            <div class="browser-line short"></div>
+
+                            <br>
+
+                            <div class="browser-line"></div>
+                            <div class="browser-line"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="work-info">
+
+                    <span>Demo Project · Tourism</span>
+
+                    <h3>Tropical Fishing Charters</h3>
+
+                    <p>
+                        A premium tourism website focused on enquiries and bookings.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="work-card">
+
+                <div class="work-preview preview-three">
+
+                    <div class="browser">
+
+                        <div class="browser-bar"></div>
+
+                        <div class="browser-content">
+
+                            <div class="browser-line"></div>
+                            <div class="browser-line short"></div>
+
+                            <br>
+
+                            <div class="browser-line"></div>
+                            <div class="browser-line"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="work-info">
+
+                    <span>Demo Project · Services</span>
+
+                    <h3>North Queensland Electrical</h3>
+
+                    <p>
+                        A clean, trustworthy website designed for local customers.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="work-card">
+
+                <div class="work-preview preview-four">
+
+                    <div class="browser">
+
+                        <div class="browser-bar"></div>
+
+                        <div class="browser-content">
+
+                            <div class="browser-line"></div>
+                            <div class="browser-line short"></div>
+
+                            <br>
+
+                            <div class="browser-line"></div>
+                            <div class="browser-line"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="work-info">
+
+                    <span>Demo Project · Hospitality</span>
+
+                    <h3>Reefside Café</h3>
+
+                    <p>
+                        A warm, image-led website designed to bring customers through the door.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="pricing">
+
+    <div class="container">
+
+        <div class="section-header center">
+
+            <div class="section-label">
+                Website packages
+            </div>
+
+            <h2>
+                Choose what your business needs.
+            </h2>
+
+            <p>
+                Straightforward packages without unnecessary extras.
+            </p>
+
+        </div>
+
+
+        <div class="pricing-grid">
+
+
+            <div class="price-card">
+
+                <h3>Starter</h3>
+
+                <p class="description">
+                    A professional online presence for businesses getting started.
+                </p>
+
+                <div class="price">
+                    Custom
+                </div>
+
+                <ul class="price-list">
+
+                    <li>Professional website</li>
+                    <li>Mobile responsive design</li>
+                    <li>Contact details & enquiry options</li>
+                    <li>Basic SEO setup</li>
+
+                </ul>
+
+                <a href="#contact" class="button">
+                    Enquire
+                </a>
+
+            </div>
+
+
+            <div class="price-card featured">
+
+                <h3>Business</h3>
+
+                <p class="description">
+                    A complete website designed to help your business grow.
+                </p>
+
+                <div class="price">
+                    Custom
+                </div>
+
+                <ul class="price-list">
+
+                    <li>Everything in Starter</li>
+                    <li>Additional pages</li>
+                    <li>Advanced SEO setup</li>
+                    <li>Google Business integration</li>
+                    <li>Ongoing support options</li>
+
+                </ul>
+
+                <a href="#contact" class="button">
+                    Enquire
+                </a>
+
+            </div>
+
+
+            <div class="price-card">
+
+                <h3>Custom</h3>
+
+                <p class="description">
+                    For businesses that need something beyond a standard website.
+                </p>
+
+                <div class="price">
+                    Let's talk
+                </div>
+
+                <ul class="price-list">
+
+                    <li>Custom functionality</li>
+                    <li>Online bookings</li>
+                    <li>Advanced integrations</li>
+                    <li>E-commerce options</li>
+
+                </ul>
+
+                <a href="#contact" class="button">
+                    Start a Conversation
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="faq" class="faq">
+
+    <div class="container">
+
+        <div class="section-header center">
+
+            <div class="section-label">
+                FAQs
+            </div>
+
+            <h2>
+                Questions? We've got answers.
+            </h2>
+
+        </div>
+
+
+        <div class="faq-list">
+
+            <details>
+
+                <summary>
+                    How much does a website cost?
+                </summary>
+
+                <p>
+                    Every business is different, so we provide a quote based
+                    on what you actually need rather than forcing every business
+                    into the same package.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    How long does a website take?
+                </summary>
+
+                <p>
+                    Most standard business websites can be completed relatively
+                    quickly once we have your content, images and requirements.
+                    We'll give you a clear timeframe before starting.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Do I need to understand websites?
+                </summary>
+
+                <p>
+                    Nope. You don't need to know anything about domains,
+                    hosting, code or DNS. We'll explain anything you need
+                    to know in plain English.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Can you help with Google?
+                </summary>
+
+                <p>
+                    Yes. We can build your website with SEO fundamentals in place
+                    and help with things such as Google Business Profile setup
+                    and local search optimisation.
+                </p>
+
+            </details>
+
+
+            <details>
+
+                <summary>
+                    Can you look after my website after it launches?
+                </summary>
+
+                <p>
+                    Yes. We can provide ongoing updates, maintenance and support
+                    depending on what your business needs.
+                </p>
+
+            </details>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="contact" class="cta">
+
+    <div class="container">
+
+        <h2>
+            Ready to build something great?
+        </h2>
+
+        <p>
+            Tell us about your business and let's talk about what you need.
+        </p>
+
+        <a href="mailto:info.tropicsites@gmail.com" class="button">
+            Start a Project →
+        </a>
+
+    </div>
+
+</section>
+
 
 <footer>
-    © 2026 Tropic Sites. All rights reserved.
+
+    <div class="container">
+
+        <div class="footer-top">
+
+            <div>
+
+                <div class="footer-logo">
+                    TROPIC SITES
+                </div>
+
+                <p class="footer-text">
+                    Modern websites and digital services for Australian businesses.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div>
+                    <a href="#services">Services</a>
+                    <a href="#work">Our Work</a>
+                    <a href="#about">About</a>
+                </div>
+
+                <div>
+                    <a href="#faq">FAQs</a>
+                    <a href="#contact">Contact</a>
+                    <a href="mailto:info.tropicsites@gmail.com">Email Us</a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div>
+                © 2026 Tropic Sites. All rights reserved.
+            </div>
+
+            <div>
+                Websites · SEO · Hosting · Support
+            </div>
+
+        </div>
+
+    </div>
+
 </footer>
 
 </body>
 </html>
+```
