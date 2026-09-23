@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tropic Sites | Websites for Australian Businesses</title>
+    <meta name="description" content="Tropic Sites builds modern, professional websites for Australian small businesses.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #17211f;
+            background: #f7f9f8;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 22px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e7ecea;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #087f6c;
+            letter-spacing: -0.5px;
+        }
+
+        nav a {
+            color: #17211f;
+            text-decoration: none;
+            margin-left: 28px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #087f6c;
+        }
+
+        .hero {
+            padding: 110px 6%;
+            text-align: center;
+            background: linear-gradient(135deg, #e9f8f4, #ffffff);
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 78px);
+            line-height: 1;
+            letter-spacing: -3px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #087f6c;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 0 auto 35px;
+            font-size: 20px;
+            color: #53605c;
+        }
+
+        .button {
+            display: inline-block;
+            background: #087f6c;
+            color: white;
+            padding: 15px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .button:hover {
+            background: #056655;
+        }
+
+        section {
+            padding: 85px 6%;
+        }
+
+        .section-title {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .section-title p {
+            color: #65716d;
+            font-size: 18px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 32px;
+            border-radius: 14px;
+            border: 1px solid #e5ebe8;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 22px;
+        }
+
+        .card p {
+            color: #65716d;
+        }
+
+        .about {
+            background: #17211f;
+            color: white;
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: auto;
+            color: #cbd5d2;
+            font-size: 18px;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        footer {
+            background: #101715;
+            color: #9da9a5;
+            text-align: center;
+            padding: 30px 6%;
+            font-size: 14px;
+        }
+
+        @media (max-width: 750px) {
+            nav {
+                display: none;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 80px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">TROPIC SITES</div>
+
+    <nav>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Websites that<br><span>make an impact.</span></h1>
+
+    <p>
+        Modern, professional websites for Australian small businesses.
+        Simple, effective and built to help your business grow.
+    </p>
+
+    <a href="#contact" class="button">Let's Talk</a>
+</section>
+
+<section id="services">
+
+    <div class="section-title">
+        <h2>What we do</h2>
+        <p>
+            Everything you need to get your business online and looking professional.
+        </p>
+    </div>
+
+    <div class="services">
+
+        <div class="card">
+            <h3>Website Design</h3>
+            <p>
+                Modern websites designed around your business, your customers
+                and what you want to achieve.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>SEO</h3>
+            <p>
+                Search-engine-friendly websites designed to help potential
+                customers find your business online.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Website Hosting</h3>
+            <p>
+                Keep your website online with reliable hosting without
+                needing to worry about the technical stuff.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="about" class="about">
+
+    <div class="section-title">
+        <h2>Built for small business.</h2>
+
+        <p>
+            We believe getting a professional website shouldn't be complicated.
+            Tropic Sites helps Australian businesses get online with modern,
+            affordable websites without the unnecessary complexity.
+        </p>
+    </div>
+
+</section>
+
+<section id="contact" class="contact">
+
+    <div class="section-title">
+        <h2>Ready to get online?</h2>
+
+        <p>
+            Let's build something great for your business.
+        </p>
+    </div>
+
+    <a href="mailto:info.tropicsites@gmail.com" class="button">
+        Email Us
+    </a>
+
+</section>
+
+<footer>
+    © 2026 Tropic Sites. All rights reserved.
+</footer>
+
+</body>
+</html>
