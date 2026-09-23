@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Approach | Tropic Sites</title>
+  <meta name="description" content="Learn how Tropic Sites approaches website projects for Australian businesses.">
+  <meta name="theme-color" content="#17352d">
+  <meta property="og:title" content="Approach | Tropic Sites">
+  <meta property="og:description" content="Learn how Tropic Sites approaches website projects for Australian businesses.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="approach">
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Tropic Sites home">
+      <span class="brand-mark" aria-hidden="true">TS</span>
+      <span>Tropic Sites</span>
+    </a>
+    <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
+      <span>Menu</span>
+    </button>
+    <nav class="site-nav" id="site-nav" data-nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="approach.html">Approach</a>
+      <a href="work.html">Work</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main class="site-main">
+
+<section class="page-hero"><div class="container"><div class="breadcrumb"><a href="index.html">Home</a> / <span class="current-page">Approach</span></div><div class="eyebrow">Approach</div><h1>Simple process. Proper attention to detail.</h1><p class="lede">A good website starts with understanding the business. From there, everything else has a reason to be there.</p></div></section>
+<section class="page-section"><div class="container">
+<div class="section-intro"><div><span class="eyebrow">01 — Understand</span><h2>Before we design anything, we talk.</h2></div><p>What do you actually do? Who needs to find you? What questions do customers ask? What has been frustrating about the current website? Those answers are more useful than a generic design brief.</p></div>
+<div class="section-intro"><div><span class="eyebrow">02 — Shape</span><h2>Then we work out what the site needs.</h2></div><p>Pages, navigation, content, calls to action and visual direction all come together here. The aim is a website that makes sense before worrying about decoration.</p></div>
+<div class="section-intro"><div><span class="eyebrow">03 — Build</span><h2>Clean code, responsive from the start.</h2></div><p>The site is built to work across phones, tablets and desktops. We pay attention to loading, spacing, accessibility, structure and the small interactions that make a website comfortable to use.</p></div>
+<div class="section-intro"><div><span class="eyebrow">04 — Refine</span><h2>The last ten percent matters.</h2></div><p>We check the pages, links, layout, mobile behaviour and content before launch. A website should feel finished, not simply published.</p></div>
+</div></section>
+<section class="cta-band"><div class="container"><span class="eyebrow">No complicated process</span><h2>You don't need to know how websites work. That's our job.</h2><a class="button" href="contact.html">Start a conversation</a></div></section>
+
+</main>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <strong>Tropic Sites</strong>
+      <p>Websites for Australian business, built with care.</p>
+    </div>
+    <div class="footer-links"><a href="mailto:info.tropicsites@gmail.com">Email</a>
+      <a href="services.html">Services</a>
+      <a href="approach.html">Approach</a>
+      <a href="work.html">Work</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Tropic Sites</span>
+    <span>Websites for Australian business.</span>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const navToggle = document.querySelector('[data-nav-toggle]');
+  const nav = document.querySelector('[data-nav]');
+  if (!navToggle || !nav) return;
+  navToggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded', String(open));
+  });
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

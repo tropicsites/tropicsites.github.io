@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pricing | Tropic Sites</title>
+  <meta name="description" content="Straightforward website pricing from Tropic Sites, starting at $499.">
+  <meta name="theme-color" content="#17352d">
+  <meta property="og:title" content="Pricing | Tropic Sites">
+  <meta property="og:description" content="Straightforward website pricing from Tropic Sites, starting at $499.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="pricing">
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Tropic Sites home">
+      <span class="brand-mark" aria-hidden="true">TS</span>
+      <span>Tropic Sites</span>
+    </a>
+    <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
+      <span>Menu</span>
+    </button>
+    <nav class="site-nav" id="site-nav" data-nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="approach.html">Approach</a>
+      <a href="work.html">Work</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main class="site-main">
+
+<section class="page-hero"><div class="container"><div class="breadcrumb"><a href="index.html">Home</a> / <span class="current-page">Pricing</span></div><div class="eyebrow">Pricing</div><h1>Clear starting points. No mystery packages.</h1><p class="lede">Every project is a little different, but these give you an honest idea of where things start.</p></div></section>
+<section class="page-section"><div class="container"><div class="pricing-grid">
+<article class="price-card"><span class="number">Starter</span><h2>For a straightforward business site.</h2><div class="price">$499</div><div class="price-note">starting price</div><ul><li>Purpose-built website</li><li>Responsive mobile design</li><li>Core business pages</li><li>Basic SEO foundations</li><li>Launch-ready build</li></ul><a class="button button-secondary" href="contact.html">Discuss Starter</a></article>
+<article class="price-card featured"><span class="number">Business</span><h2>For a more involved website.</h2><div class="price">$899</div><div class="price-note">starting price</div><ul><li>More detailed page structure</li><li>Custom visual direction</li><li>Expanded content support</li><li>SEO foundations</li><li>More room for future growth</li></ul><a class="button button-primary" href="contact.html">Discuss Business</a></article>
+<article class="price-card"><span class="number">Custom</span><h2>For something outside the usual scope.</h2><div class="price">Let's talk</div><div class="price-note">quoted around the project</div><ul><li>Larger websites</li><li>Special functionality</li><li>Custom requirements</li><li>Ongoing work</li><li>Projects that need a different approach</li></ul><a class="button button-secondary" href="contact.html">Talk about it</a></article>
+</div></div></section>
+<section class="page-section"><div class="container"><div class="section-intro"><div><span class="eyebrow">A note on pricing</span><h2>The starting price is not the whole story.</h2></div><p>Once we know what you're building, we can give you a more useful figure. The aim is to keep pricing understandable rather than hiding everything behind a “contact us for a quote” wall.</p></div></div></section>
+
+</main>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <strong>Tropic Sites</strong>
+      <p>Websites for Australian business, built with care.</p>
+    </div>
+    <div class="footer-links"><a href="mailto:info.tropicsites@gmail.com">Email</a>
+      <a href="services.html">Services</a>
+      <a href="approach.html">Approach</a>
+      <a href="work.html">Work</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2026 Tropic Sites</span>
+    <span>Websites for Australian business.</span>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const navToggle = document.querySelector('[data-nav-toggle]');
+  const nav = document.querySelector('[data-nav]');
+  if (!navToggle || !nav) return;
+  navToggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('is-open');
+    navToggle.setAttribute('aria-expanded', String(open));
+  });
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
